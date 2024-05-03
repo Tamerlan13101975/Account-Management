@@ -1,5 +1,6 @@
 class User:
 
+
     def __init__(self, id, name, access_level="user"):
         self._id = id
         self._name = name
@@ -14,24 +15,24 @@ class User:
     def get_access_level(self):
         return self._access_level
 
-    class Admin():
+class Admin(User):
 
-        def __init__(self, id, name):
+    def __init__(self, id, name):
             super().__init__(id, name, "admin")
             self._users = []
 
-        def add_user(self, user):
-            if isinstance(user, User):
+    def add_user(self, user):
+        if isinstance(user, User):
                 self._users.append(user)
-            else:
-                raise ValueError("Invalid user type")
+        else:
+            raise ValueError("Invalid user type")
 
-        def remove_user(self, user_id):
-            for user in self._users:
-                if user.get_id() == user_id:
-                    self._users.remove(user)
-                    return
-            raise ValueError("User not found")
+    def remove_user(self, user_id):
+        for user in self._users:
+            if user.get_id() == user_id:
+                self._users.remove(user)
+                return
+        raise ValueError("User not found")
 
 
 # Меню для взаимодействия с системой
@@ -65,7 +66,7 @@ def add_user():
     access_level = input("Введите уровень доступа (user/admin): ")
 
     if access_level == 'admin':
-        user = Admin(id, name)
+        user = admin(id, name)
     else:
         user = User(id, name, access_level)
 
@@ -89,7 +90,7 @@ def list_users():
 
 if __name__ == "__main__":
     # Создать экземпляр администратора с ID 0 и именем 'Admin'
-    admin = Admin(0, 'Admin')
+    admin = Admin(0, "admin")
 
     # Запустить меню для взаимодействия с системой
     main_menu()
