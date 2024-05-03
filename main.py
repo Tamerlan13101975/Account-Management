@@ -24,14 +24,14 @@ class User:
             if isinstance(user, User):
                 self._users.append(user)
             else:
-                raise ValueError('Invalid user type')
+                raise ValueError("Invalid user type")
 
         def remove_user(self, user_id):
             for user in self._users:
                 if user.get_id() == user_id:
                     self._users.remove(user)
                     return
-            raise ValueError('User not found')
+            raise ValueError("User not found")
 
 
 # Меню для взаимодействия с системой
@@ -43,6 +43,20 @@ def main_menu():
         print("2. Удалить пользователя")
         print("3. Просмотреть список пользователей")
         print("4. Выход")
+
+        choice = input("Введите номер действия: ")
+
+        if choice == '1':
+            add_user()
+        elif choice == '2':
+            remove_user()
+        elif choice == '3':
+            list_users()
+        elif choice == '4':
+            print("До свидания!")
+            break
+        else:
+            print("Недопустимый выбор. Попробуйте еще раз.")
 
 
 
