@@ -59,4 +59,18 @@ def main_menu():
             print("Недопустимый выбор. Попробуйте еще раз.")
 
 
+def add_user():
+    id = input("Введите ID пользователя: ")
+    name = input("Введите имя пользователя: ")
+    access_level = input("Введите уровень доступа (user/admin): ")
+
+    if access_level == 'admin':
+        user = Admin(id, name)
+    else:
+        user = User(id, name, access_level)
+
+    admin._users.append(user)
+    print("Пользователь добавлен.")
+
+
 
