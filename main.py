@@ -83,3 +83,13 @@ def list_users():
     print("Список пользователей:")
     for user in admin._users:
         print(f"ID: {user.get_id()}, Имя: {user.get_name()}, Уровень доступа: {user.get_access_level()}")
+
+
+# Использование системы
+
+if __name__ == "__main__":
+    # Создать экземпляр администратора с ID 0 и именем 'Admin'
+    admin = Admin(0, 'Admin')
+
+    # Запустить меню для взаимодействия с системой
+    main_menu()
