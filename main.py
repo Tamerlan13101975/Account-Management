@@ -34,4 +34,15 @@ class User:
             raise ValueError('User not found')
 
 
+# Меню для взаимодействия с системой
+
+def main_menu():
+    while True:
+        print("Выберите действие:")
+        print("1. Добавить пользователя")
+        print("2. Удалить пользователя")
+        print("3. Просмотреть список пользователей")
+        print("4. Выход")
+
+
 
