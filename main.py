@@ -5,5 +5,11 @@ class User:
         self._name = name
         self._access_level = access_level
 
+    def get_id(self):
+        return self._id
 
-    
+    def get_name(self):
+        return self._name
+
+    def get_access_level(self):
+        return self._access_level
