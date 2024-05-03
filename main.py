@@ -77,3 +77,9 @@ def remove_user():
     user_id = input("Введите ID пользователя для удаления: ")
     admin.remove_user(user_id)
     print("Пользователь удален.")
+
+
+def list_users():
+    print("Список пользователей:")
+    for user in admin._users:
+        print(f"ID: {user.get_id()}, Имя: {user.get_name()}, Уровень доступа: {user.get_access_level()}")
