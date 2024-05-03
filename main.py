@@ -14,7 +14,7 @@ class User:
     def get_access_level(self):
         return self._access_level
 
-    class Admin("User"):
+    class Admin():
 
         def __init__(self, id, name):
             super().__init__(id, name, "admin")
