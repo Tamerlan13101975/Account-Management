@@ -73,4 +73,7 @@ def add_user():
     print("Пользователь добавлен.")
 
 
-
+def remove_user():
+    user_id = input("Введите ID пользователя для удаления: ")
+    admin.remove_user(user_id)
+    print("Пользователь удален.")
